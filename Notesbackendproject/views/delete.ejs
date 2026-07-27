@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Delete Note</title>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="min-h-screen flex items-center justify-center">
+
+        <div class="bg-white p-8 rounded-lg shadow-md w-96">
+
+            <h1 class="text-2xl font-bold mb-4">
+                Delete Note
+            </h1>
+
+            <p class="text-gray-600 mb-6">
+                Are you sure you want to delete
+                <strong><%=filename %></strong>?
+            </p>
+
+            <form action="/delete/<%= filename %>" method="POST">
+
+                <button
+                    type="submit"
+                    class="bg-red-500 text-white px-4 py-2 rounded">
+                    Delete
+                </button>
+
+                <a
+                    href="/"
+                    class="ml-3 bg-gray-300 px-4 py-2 rounded">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

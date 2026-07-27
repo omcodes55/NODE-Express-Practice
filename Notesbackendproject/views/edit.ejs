@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Note</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-stone-100">
+
+    <div class="max-w-4xl mx-auto py-10 px-6">
+
+        <!-- Back Button -->
+
+        <a
+            href="/"
+            class="inline-block mb-6 text-emerald-600 font-medium hover:underline"
+        >
+            ← Back to Notes
+        </a>
+
+
+        <!-- Edit Card -->
+
+        <div class="bg-white rounded-2xl shadow-md p-6">
+
+            <h1 class="text-3xl font-bold text-emerald-700 mb-2">
+                Edit Note
+            </h1>
+
+
+
+            <!-- Form -->
+
+            <form action="/edit/<%= filename %>" method="POST">
+
+                <!-- Title -->
+
+                <label class="block text-gray-700 font-medium mb-2">
+                    Note Title
+                </label>
+
+                <input
+                    type="text"
+                    name="title"
+                    value="<%= filename.replace('.txt','') %>"
+                    required
+                    class="w-full border border-gray-300 rounded-xl px-4 py-3 mb-5 outline-none focus:ring-2 focus:ring-emerald-500"
+                >
+
+
+                <!-- Description -->
+
+                <label class="block text-gray-700 font-medium mb-2">
+                    Description
+                </label>
+
+                <textarea
+                    name="description"
+                    rows="8"
+                    required
+                    class="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none resize-none focus:ring-2 focus:ring-emerald-500"
+                ><%= content %></textarea>
+
+
+                <!-- Button -->
+
+                <button
+                    type="submit"
+                    class="mt-5 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl transition"
+                >
+                    Update Note
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
