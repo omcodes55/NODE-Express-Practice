@@ -1,1 +1,4 @@
-node_modules/
+NODE/databasemongoose/node_modules/
+NODE/Express/node_modules/
+NODE/miniproject/node_modules/
+NODE/Notesbackend/node_modules/
