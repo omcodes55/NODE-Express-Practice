@@ -34,15 +34,17 @@ app.post("/update/:id", async (req, res) => {
     res.redirect("/users")
 })
 
-app.get("/users", async (req, res) => {
 
-    let users = await userModel.find();
-    res.render("usercard.ejs", { users })
-})
 
 app.get("/delete/:id", async (req, res) => {
     let users = await userModel.findOneAndDelete({ _id: req.params.id })
     res.redirect("/users")
+})
+
+app.get("/users", async (req, res) => {
+
+    let users = await userModel.find();
+    res.render("usercard.ejs", { users })
 })
 
 app.post("/create", async (req, res) => {
