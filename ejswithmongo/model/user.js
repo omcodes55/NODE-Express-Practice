@@ -2,10 +2,11 @@ const mongoose = require("mongoose")
 
 mongoose.connect("mongodb://localhost:27017/pmusers")
     .then(() => {
-        console.log("mongodb connected successfully ")
+        console.log("mongodb connected successfully")
     }).catch((err) => {
         console.log(err)
     })
+
 
 const userSchema = mongoose.Schema({
     name: String,
