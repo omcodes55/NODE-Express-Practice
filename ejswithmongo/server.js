@@ -56,10 +56,7 @@ app.post("/create", async (req, res) => {
         email,
         image
     })
-
-    // alert("User Created Successfully")
     res.redirect("/users")
-
 })
 
 app.listen(3000, (err) => {
