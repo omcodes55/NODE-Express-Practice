@@ -169,8 +169,6 @@ app.post("/post", isLoggedIn, async (req, res) => {
     res.status(201).redirect("/profile")
 })
 
-
-
 app.listen(PORT, () => {
     console.log(`Server Running on http://localhost:${PORT}`);
 });
