@@ -9,7 +9,7 @@ const app = express();
 const userModel = require("./model/user");
 const postModel = require("./model/post")
 
-const PORT = 3000; //.env
+const PORT = 5151; //.env
 const JWT_SECRET = "secretkey"; //.env
 
 
