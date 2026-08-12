@@ -141,12 +141,12 @@ function isLoggedIn(req, res, next) {
 
 app.get("/profile", isLoggedIn, async (req, res) => {
     try {
-        const user = await userModel.findOne({email: req.user.email}).populate("posts");
-       
+        const user = await userModel.findOne({ email: req.user.email }).populate("posts");
+
         if (!user) {
             return res.status(404).send("User not found");
         }
-        
+
         res.render("profile", { user });
 
     } catch (err) {
@@ -156,8 +156,8 @@ app.get("/profile", isLoggedIn, async (req, res) => {
 });
 
 app.post("/post", isLoggedIn, async (req, res) => {
-    let user = await userModel.findOne({email:req.user.email});
-    let {content} = req.body
+    let user = await userModel.findOne({ email: req.user.email });
+    let { content } = req.body
 
     let post = await postModel.create({
         content,
@@ -167,10 +167,13 @@ app.post("/post", isLoggedIn, async (req, res) => {
     user.posts.push(post._id);
     await user.save();
     res.status(201).redirect("/profile")
-
-
 })
+
+
 
 app.listen(PORT, () => {
     console.log(`Server Running on http://localhost:${PORT}`);
 });
+
+
+
