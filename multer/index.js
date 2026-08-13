@@ -30,6 +30,7 @@ app.get("/",(req,res)=>{
     res.render("multer")
 })
 
+
 app.post("/upload", upload.single("image"), (req, res)=>{
     
     console.log(req.file);
