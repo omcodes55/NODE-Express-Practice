@@ -4,6 +4,7 @@ const path = require("path")
 const multer = require("multer")
 const cypto = require("crypto")
 const { throws } = require("assert")
+const PORT = 3030
 
 
 app.set("view engine","ejs")
@@ -39,7 +40,7 @@ app.post("/upload", upload.single("image"), (req, res)=>{
 
 
 
-app.listen(5000,(err)=>{
+app.listen(PORT,(err)=>{
     if(err) throw err
-    console.log("Server is running on port 5000")
+    console.log(`Server is running on port ${PORT}`)
 })
